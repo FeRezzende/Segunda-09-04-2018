@@ -7,6 +7,7 @@ import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClienteService } from './services/cliente.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorInterceptorProvider } from './services/interceptor-error';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ClienteService],
+  providers: [
+  ClienteService,
+  ErrorInterceptorProvider]
   bootstrap: [AppComponent]
 })
 export class AppModule { }
